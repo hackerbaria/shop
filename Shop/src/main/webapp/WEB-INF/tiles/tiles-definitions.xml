@@ -11,9 +11,21 @@
 		<put-attribute name="menu" value="/WEB-INF/pages/templates/customer/menu.jsp"></put-attribute>
 		<put-attribute name="body" value=""></put-attribute>
 		<put-attribute name="footer" value="/WEB-INF/pages/templates/customer/footer.jsp"></put-attribute>
-	</definition>	
+	</definition>
 	
-	<definition name="login" extends="defaultTemplate">
+	<definition name="loginTemplate" template="/WEB-INF/pages/templates/customer/LoginTemplate.jsp">
+		<put-attribute name="titles" value=""></put-attribute>		
+		<put-attribute name="body" value=""></put-attribute>
+		<put-attribute name="footer" value="/WEB-INF/pages/templates/customer/footer.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="show" extends="defaultTemplate">
+		<put-attribute name="titles" value="Danh sách sản phẩm"/>		
+		<put-attribute name="body" value="/WEB-INF/pages/show.jsp"></put-attribute>
+	</definition>	
+		
+	
+	<definition name="login" extends="loginTemplate">
 		<put-attribute name="titles" value="Login"/>
 		<put-attribute name="body" value="/WEB-INF/pages/index.jsp"></put-attribute>
 	</definition>
