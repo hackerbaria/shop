@@ -27,6 +27,8 @@
 	<!-- View Resolver use tiles -->
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.tiles3.TilesViewResolver" />
+		
+		<bean id="colourValidator" class="com.shop.validator.ColourValidator" />
 
 	<!-- Tiles configuration -->
 	<bean id="tilesConfigurer"

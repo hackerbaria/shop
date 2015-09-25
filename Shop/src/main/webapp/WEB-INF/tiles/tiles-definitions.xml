@@ -19,9 +19,9 @@
 		<put-attribute name="footer" value="/WEB-INF/pages/templates/customer/footer.jsp"></put-attribute>
 	</definition>
 	
-	<definition name="show" extends="defaultTemplate">
+	<definition name="colour" extends="defaultTemplate">
 		<put-attribute name="titles" value="Danh sách sản phẩm"/>		
-		<put-attribute name="body" value="/WEB-INF/pages/show.jsp"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/pages/colour.jsp"></put-attribute>
 	</definition>	
 		
 	

@@ -1,6 +1,9 @@
 package com.shop.controller;
 
+
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -17,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.shop.model.ProductType;
 import com.shop.model.User;
 import com.shop.services.ProductTypeServices;
 import com.shop.services.UserServices;
@@ -30,7 +34,13 @@ public class ShopController {
 	@Autowired
 	private ProductTypeServices productTypeServices;
 
-	Map<String, Object> myProductTypes = new HashMap<String, Object>();
+	Map<String, Object> myProductType = new HashMap<String, Object>();
+	
+	
+	
+	
+
+	
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String showLoginForm(Map<String, Object> model) {
@@ -40,42 +50,26 @@ public class ShopController {
 	}
 
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public String processLoginForm(@Validated User user, BindingResult result,
-			Map<String, Object> model, HttpSession session) {
+	public String  processLoginForm(@Validated User user, BindingResult result,
+			Model model, HttpSession session) {
 
 		if (result.hasErrors()) {
 			return "login";
 		}
-
-		// User u = (User) model.get("user");
-
+		
 		if (userServices.checkUser(user)) {
 			// session.setAttribute("user",
 			// customService.findByUsername(c.getUsername()));
-			return "show";
+			
+			/*myProductType.put("productTypeList", this.productTypeServices.getAllProductTypes());
+			model.addAttribute("product", myProductType);	*/	
+			
+			return "redirect:/colour";
 		}
 
 		return "login";
 	}
 	
-	@RequestMapping(value = "/show")
-	public ModelAndView loadPage(HttpServletRequest request,
-			HttpServletResponse response, BindingResult result, ModelMap m,
-			Model model) throws Exception {
-
-		try {
-
-			myProductTypes.put("productTypeList", this.productTypeServices.getAllProductTypes());
-
-			model.addAttribute("producttype", myProductTypes);
-
-			return new ModelAndView("officer_registration");
-
-		} catch (Exception e) {
-
-			request.setAttribute("error", e.getMessage());
-			return new ModelAndView("error_page");
-		}		
-	}
+	
 
 }

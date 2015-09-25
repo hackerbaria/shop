@@ -26,31 +26,14 @@
 	<div class="container">
 		<h2>Spring's form select, option, options example</h2>
 
-	<form:form method="POST" commandName="customerForm">
-		<form:errors path="*" cssClass="errorblock" element="div" />
-		<table>
-
-			<tr>
-				<td>Loại Linh Kiện :</td>
-				<td><form:select path="country">
-					  <form:option value="NONE" label="--- Select ---" />
-					  <form:options items="${countryList}" />
-				       </form:select>
-                                </td>
-				<td><form:errors path="country" cssClass="error" /></td>
-			</tr>
-			<tr>
-				<td>Tên Sản Phẩm :</td>
-				<td><form:select path="javaSkills" items="${javaSkillsList}"
-					multiple="true" /></td>
-				<td><form:errors path="javaSkills" cssClass="error" /></td>
-			</tr>
-
-			<tr>
-				<td colspan="3"><input type="submit" /></td>
-			</tr>
-		</table>
-	</form:form>
+	
+            <label>Select Gender</label>
+            <form:select path="product.productTypeList.id">
+            <form:options items = "${product}" itemValue="id" itemLabel="name" />
+            </form:select>
+            <form:errors path="product.productTypeList.id"/>
+        
+	
 	</div>
 	<!-- End container -->
 </body>

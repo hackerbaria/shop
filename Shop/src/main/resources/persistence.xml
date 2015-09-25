@@ -11,7 +11,8 @@
     <class>com.shop.model.User</class>
     <class>com.shop.model.Area</class>
     <class>com.shop.model.Manufacture</class>
-    <class>com.shop.model.ProductType</class>    
+    <class>com.shop.model.ProductType</class>
+    <class>com.shop.model.Colour</class>    
     <properties>
         <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect" />
     </properties>
