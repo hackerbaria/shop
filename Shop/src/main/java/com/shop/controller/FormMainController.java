@@ -16,12 +16,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.shop.model.Colour;
+import com.shop.model.ProductType;
+import com.shop.services.ProductTypeServices;
 
 
 
 @Controller
-@RequestMapping("/colour")
-public class ColourController {
+@RequestMapping("/show")
+public class FormMainController {
+	
+	
+	@Autowired
+	private ProductTypeServices productTypeServices;	
 
     @Autowired
     @Qualifier("colourValidator")
@@ -34,10 +40,10 @@ public class ColourController {
 	
 	@RequestMapping(method = RequestMethod.GET)
 	public String initForm(Model model) {
-		Colour colour = new Colour();
-		model.addAttribute("colour", colour);
+		ProductType productType = new ProductType();
+		model.addAttribute("product", productType);
 		initModelList(model);
-		return "colour";
+		return "show";
 	}
 
 	@RequestMapping(method = RequestMethod.POST)
@@ -54,12 +60,7 @@ public class ColourController {
 	}
 
 	private void initModelList(Model model) {
-		List<String> coloursList = new ArrayList<String>();
-		coloursList.add("red");
-		coloursList.add("green");
-		coloursList.add("yellow");
-		coloursList.add("pink");
-		coloursList.add("blue");
-		model.addAttribute("colours", coloursList);
+		List<ProductType> productsList = this.productTypeServices.getAllProductTypes();		
+		model.addAttribute("products", productsList);
 	}
 }

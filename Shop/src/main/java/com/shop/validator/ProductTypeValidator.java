@@ -5,16 +5,17 @@ import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
 
-import com.shop.model.Colour;
+import com.shop.model.ProductType;
 
 
-public class ColourValidator implements Validator {
+
+public class ProductTypeValidator implements Validator {
 
 		public boolean supports(Class<?> paramClass) {
-			return Colour.class.equals(paramClass);
+			return ProductType.class.equals(paramClass);
 		}
 
 		public void validate(Object obj, Errors errors) {
-			ValidationUtils.rejectIfEmptyOrWhitespace(errors, "colourName", "valid.colour");
+			ValidationUtils.rejectIfEmptyOrWhitespace(errors, "name", "valid.name");
 		}
 }

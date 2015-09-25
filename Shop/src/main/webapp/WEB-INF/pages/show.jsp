@@ -24,14 +24,36 @@
 <body>
 	<c:set var="contextPath" value="${pageContext.request.contextPath}"/>
 	<div class="container">
-		<h2>Spring's form select, option, options example</h2>
-
-	
-            <label>Select Gender</label>
-            <form:select path="product.productTypeList.id">
-            <form:options items = "${product}" itemValue="id" itemLabel="name" />
-            </form:select>
-            <form:errors path="product.productTypeList.id"/>
+		<form:form method="POST" commandName="product">
+		<table>
+			<tr>
+				<td>Loại Linh Kiện:</td>
+				<td><form:select path="name">
+					  <form:option value="" label="...." />
+					  <form:options items="${products}" itemsValue="id" itemLabel="name" />
+				       </form:select>
+                                </td>
+				<td><form:errors path="name" cssStyle="color: #ff0000;" /></td>
+			</tr>
+			
+			<tr>
+			</tr>
+			
+			<tr>
+				<td>Tên Sản Phẩm:</td>
+				<td><form:select path="name">
+					  <form:option value="" label="...." />
+					  <form:options items="${products}" itemsValue="id" itemLabel="name" />
+				       </form:select>
+                                </td>
+				<td><form:errors path="name" cssStyle="color: #ff0000;" /></td>
+			</tr>
+			<tr>
+				<td><input type="submit" name="submit" value="Submit"></td>
+			</tr>
+			<tr>
+		</table>
+	</form:form>
         
 	
 	</div>
