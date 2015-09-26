@@ -16,6 +16,7 @@ public class ProductTypeValidator implements Validator {
 		}
 
 		public void validate(Object obj, Errors errors) {
-			ValidationUtils.rejectIfEmptyOrWhitespace(errors, "name", "valid.name");
+			//ValidationUtils.rejectIfEmptyOrWhitespace(errors, "name", "valid.name");
+			//ValidationUtils.rejectIfEmptyOrWhitespace(errors, "id", "valid.id");
 		}
 }

@@ -1,6 +1,5 @@
 package com.shop.controller;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +15,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.shop.model.Colour;
+import com.shop.model.Product;
 import com.shop.model.ProductType;
+import com.shop.services.ProductServices;
 import com.shop.services.ProductTypeServices;
 
 
@@ -27,10 +28,13 @@ public class FormMainController {
 	
 	
 	@Autowired
-	private ProductTypeServices productTypeServices;	
+	private ProductTypeServices productTypeServices;
+	
+	@Autowired
+	private ProductServices productServices;
 
     @Autowired
-    @Qualifier("colourValidator")
+    @Qualifier("productTypeValidator")
     private Validator validator;
     
     @InitBinder
@@ -41,20 +45,23 @@ public class FormMainController {
 	@RequestMapping(method = RequestMethod.GET)
 	public String initForm(Model model) {
 		ProductType productType = new ProductType();
-		model.addAttribute("product", productType);
+		model.addAttribute("productType", productType);
 		initModelList(model);
 		return "show";
 	}
 
 	@RequestMapping(method = RequestMethod.POST)
-	public String submitForm(Model model, @Validated Colour colour, BindingResult result) {
-		model.addAttribute("colour", colour);
-		String returnVal = "successColour";
+	public String submitForm(Model model, @Validated ProductType productType, BindingResult result) {
+		model.addAttribute("productType", productType);
+		String returnVal = "showproduct";  
 		if(result.hasErrors()) {
 			initModelList(model);
-			returnVal = "colour";
+			returnVal = "show";
 		} else {
-			model.addAttribute("colour", colour);
+			
+			List<Product> productList = productServices.getProductsByTypeID(productType.getType());			
+			model.addAttribute("listProduct", productList);
+			
 		}		
 		return returnVal;
 	}

@@ -1,10 +1,15 @@
 package com.shop.model;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.hibernate.validator.constraints.NotEmpty;
@@ -17,18 +22,31 @@ public class ProductType {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "ID", unique = true, nullable = false)
-	private int id;
+	private int type;
 	
 	@NotEmpty
 	@Column(name = "NAME", unique = true, nullable = false, length = 256)
 	private String name;
+	
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "productType")
+	private Set<Product> productRecords = new HashSet<Product>(
+			0);
+	
 
-	public int getId() {
-		return id;
+	public int getType() {
+		return type;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public Set<Product> getProductRecords() {
+		return productRecords;
+	}
+
+	public void setProductRecords(Set<Product> productRecords) {
+		this.productRecords = productRecords;
+	}
+
+	public void setType(int type) {
+		this.type = type;
 	}
 
 	public String getName() {

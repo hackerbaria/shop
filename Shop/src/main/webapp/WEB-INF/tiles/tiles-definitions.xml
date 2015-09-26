@@ -27,6 +27,12 @@
 	
 	<definition name="login" extends="loginTemplate">
 		<put-attribute name="titles" value="Login"/>
-		<put-attribute name="body" value="/WEB-INF/pages/index.jsp"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/pages/login.jsp"></put-attribute>
+	</definition>
+	
+	
+	<definition name="showproduct" extends="loginTemplate">
+		<put-attribute name="titles" value="Login"/>
+		<put-attribute name="body" value="/WEB-INF/pages/showproduct.jsp"></put-attribute>
 	</definition>
 </tiles-definitions>       

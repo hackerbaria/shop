@@ -1,42 +1,61 @@
+<!DOCTYPE html>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-</head>
-<body>
+	pageEncoding="UTF-8"%>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+    <title>Signin Template for Bootstrap</title>    
+    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">   
+    <link href="signin.css" rel="stylesheet">    
+    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>   
+  </head>
+  <style type="text/css">
+  .form-signin {
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
+	}
+	* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+	}
+	user agent stylesheetform {
+    display: block;
+    margin-top: 0em;
+	}
+  
+  </style>
+  <body>
 
- <div class="container">
- 	 <div class="col-md-6">
- 	 	<form:form role="form" action="login" commandName="customer" >
-	        <h5 class="form-signin-heading"><b>Khách hàng mới</b></h5>
-	        <p>Hãy tạo cho mình một tài khoản, bạn sẽ được các ưu đãi chỉ dành cho thành viên.</p>
-	        
-	        <div class="col-md-7"></div>
-	        <div class="col-md-5"><button class="btn-primary btn-block" type="submit">Tạo tài khoản</button></div>
-	     </form:form>  
- 	 </div>
-	 <div class="col-md-6">
-	      <form:form role="form" action="login" commandName="customer" >
-	        <h5 class="form-signin-heading"><b>Bạn đã có tài khoản</b></h5>
-	        <p>Nếu ban đã đăng ký, bạn vui lòng đăng nhâp vào hệ thống.</p>
-	        <div class="form-group">
-	        	<label for="inputEmail" >Địa chỉ Email</label>
-	        	<form:input type="email" path="username" class="form-control" placeholder="Email address" required="true"/>
-	        </div>
-	        <div class="form-group">
-	        	<label for="inputPassword">Mật Khẩu</label>
-	        	<form:input type="password" path="password" class="form-control" placeholder="Password" required="true"/>
-	        </div>
-	        <div class="checkbox">
-    			<label><input type="checkbox"> Ghi nhớ mật khẩu</label>
-     
-    		</div>
-	        <div class="col-md-7"></div>
-	        <div class="col-md-5"><button class="btn-primary btn-block" type="submit">Đăng Nhập</button></div>
-	     </form:form>  
-	</div>     
- </div> 
-</body>
+    <div class="container">
+
+      <form:form class="form-signin" action="login" method="post" modelAttribute="user">
+        <h2 class="form-signin-heading">Login Form</h2>
+        <label for="username" class="sr-only">Tài Khoản</label>
+        <form:input path="userName" class="form-control" placeholder="UserName" />
+        <label for="password" class="sr-only">Mật Khẩu</label>
+        <form:input path="password" class="form-control" placeholder="Password" />        
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" value="remember-me"> Remember me
+          </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      </form:form>
+
+    </div> 
+
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
 </html>

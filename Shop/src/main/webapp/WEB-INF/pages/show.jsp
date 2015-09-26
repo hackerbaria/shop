@@ -24,32 +24,23 @@
 <body>
 	<c:set var="contextPath" value="${pageContext.request.contextPath}"/>
 	<div class="container">
-		<form:form method="POST" commandName="product">
+		<form:form method="POST" action="show" commandName="productType">
 		<table>
 			<tr>
 				<td>Loại Linh Kiện:</td>
-				<td><form:select path="name">
-					  <form:option value="" label="...." />
-					  <form:options items="${products}" itemsValue="id" itemLabel="name" />
-				       </form:select>
-                                </td>
+				<td><form:select path="type">
+					  	<form:option value="-1" label="...." />
+					  	<form:options items="${products}" itemValue="type" itemLabel="name" />
+				    </form:select>
+                 </td>
 				<td><form:errors path="name" cssStyle="color: #ff0000;" /></td>
 			</tr>
 			
 			<tr>
-			</tr>
+			</tr>		
 			
 			<tr>
-				<td>Tên Sản Phẩm:</td>
-				<td><form:select path="name">
-					  <form:option value="" label="...." />
-					  <form:options items="${products}" itemsValue="id" itemLabel="name" />
-				       </form:select>
-                                </td>
-				<td><form:errors path="name" cssStyle="color: #ff0000;" /></td>
-			</tr>
-			<tr>
-				<td><input type="submit" name="submit" value="Submit"></td>
+				<td><input type="submit" name="submit" value="Tìm Kiếm"></td>
 			</tr>
 			<tr>
 		</table>

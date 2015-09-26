@@ -1,10 +1,15 @@
 package com.shop.model;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.hibernate.validator.constraints.NotEmpty;
@@ -26,6 +31,11 @@ public class Area {
 	
 	@Column(name = "DESCRIPTIONS", unique = true, length = 255)
 	private String description;
+	
+	
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "area")
+	private Set<Product> products = new HashSet<Product>(
+			0);
 
 	public int getId() {
 		return id;
