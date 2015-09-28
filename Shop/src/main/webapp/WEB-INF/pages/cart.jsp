@@ -35,16 +35,14 @@
 							<tr>
 								<td><a href="javascript:removeCart(${p.key.id })" class=""><span class="glyphicon glyphicon-remove"></span></a></td>
 								<td>${pStatus.index+1}</td>
-								<td><h4>${p.key.name}</h4>
-									<c:if test="${p.key.promotePrice==0}">
-										${p.key.price} VND
+								<td><h4>${p.key.productName}</h4>
+									
+									<c:if test="${p.key.salePrice!=0}">
+										<s>${p.key.salePrice} VND</s>
 									</c:if>
-									<c:if test="${p.key.promotePrice!=0}">
-										<s>${p.key.price} VND</s> - <h4>${p.key.promotePrice}</h4>
-									</c:if>
-									<img class="img-responsive" alt="" src="<c:url value="/resources/img/${p.key.bigImage}"/>" width="75px" height="100px"/></td>
+									<img class="img-responsive" alt="" src="<c:url value="/resources/img/${p.key.image}"/>" width="75px" height="100px"/></td>
 								<td><input type="text" value="${p.value}" class='form-control' style='width:20%' id='${p.key.id}' name='${p.key.id}' maxlength="2"/></td>
-								<td>${p.key.price*p.value} VND</td>
+								<td>${p.key.salePrice*p.value} VND</td>
 							</tr>
 						 </c:forEach> 
 						 <tr><td align="right" colspan="5"><input type='submit' class='form-control' style='width:20%' value='Cập nhật giỏ hàng'/></td></tr>

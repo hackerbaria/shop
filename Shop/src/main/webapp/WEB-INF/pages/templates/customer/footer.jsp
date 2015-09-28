@@ -32,15 +32,15 @@
             <div class="col-md-4">
                <h4>Về chúng tôi</h4>
             	<a href='#'>Giới thiệu về trang web</a><br/>
-            	Hotline:<a href=''>01695 306 207</a><br/>
-            	Email:<a href=''> donghochatluong@gmail.com</a><br/>
-            	Facebook:<a href=''>facebook.com/shopdongho</a><br/>           
+            	Hotline:<a href=''>01673383885</a><br/>
+            	Email:<a href=''> ngocle3885@gmail.com</a><br/>
+            	Facebook:<a href=''>facebook.com/lehuuthungoc</a><br/>           
             </div>
 		 </div>		
 		 <hr/><br/>
 		 <div class="row">
 		 	<div class="col-md-12">
-		 	<p class="text-muted">Phan Văn Dương và Nguyễn Văn Thông hợp tác xây dụng website này, ngày 6/9/2015. Số điện thoại: 01695 306207. Email: vanduongit1706@gmail.com
+		 	<p class="text-muted">Đồ Án Giữa Kỳ Lập Trình java
 		 	</p>
 		 	</div>
 		 </div>

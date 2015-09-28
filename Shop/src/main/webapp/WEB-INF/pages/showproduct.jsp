@@ -44,6 +44,7 @@
 									<div class="caption">
 										<h3>${p.productName}</h3>																		
 										<div class="promoteprice"><p>Giá: ${p.salePrice} VND</p></div>
+										<div class="promoteprice"><p>Số Lượng: <input type="text" name="numberInput"/></p></div>
 										<p style="visibility: collapse;">hidden</p>																									
 										<p>
 											<a href="cart/add/${p.id}?quantity=1" class="btn btn-primary">Mua ngay</a> <a href="product/detail/${p.id}"

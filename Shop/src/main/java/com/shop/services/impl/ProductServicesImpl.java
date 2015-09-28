@@ -19,4 +19,8 @@ public class ProductServicesImpl implements ProductServices {
 		return productDao.getProductsByTypeID(type);
 	}
 
+	public Product getProductById(int id) {		
+		return productDao.findById(id);
+	}
+
 }

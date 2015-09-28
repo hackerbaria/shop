@@ -27,7 +27,7 @@
 	<div class="container" >
 		 <div class="row">
 		 	<div class="col-md-3">                                                 
-            <h1>MASTER</h1>         
+            <img src="resources/img/logo.png"" alt="Logo" style="width:200px;height:100px;">         
             </div>
             <div class="col-md-6" style="margin-top: 20px;">                               
             	<form action="${pageContext.request.contextPath}/product/search" class="form-inline" role="form">

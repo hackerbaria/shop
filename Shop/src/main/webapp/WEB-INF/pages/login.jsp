@@ -39,17 +39,17 @@
     <div class="container">
 
       <form:form class="form-signin" action="login" method="post" modelAttribute="user">
-        <h2 class="form-signin-heading">Login Form</h2>
+        <h2 class="form-signin-heading">Form Đăng nhập</h2> 
         <label for="username" class="sr-only">Tài Khoản</label>
         <form:input path="userName" class="form-control" placeholder="UserName" />
         <label for="password" class="sr-only">Mật Khẩu</label>
-        <form:input path="password" class="form-control" placeholder="Password" />        
+        <form:input path="password" type="password"  class="form-control" placeholder="Password" />        
         <div class="checkbox">
           <label>
-            <input type="checkbox" value="remember-me"> Remember me
+            <input type="checkbox" value="remember-me"> Ghi Nhớ
           </label>
         </div>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Đăng nhập</button>
       </form:form>
 
     </div> 

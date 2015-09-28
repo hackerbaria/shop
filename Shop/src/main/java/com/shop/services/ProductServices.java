@@ -7,5 +7,7 @@ import com.shop.model.Product;
 
 public interface ProductServices {
 	List<Product> getProductsByTypeID(int type);
+	
+	Product getProductById(int id);
 
 }

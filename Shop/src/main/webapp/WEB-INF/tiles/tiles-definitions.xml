@@ -16,7 +16,7 @@
 	<definition name="loginTemplate" template="/WEB-INF/pages/templates/customer/LoginTemplate.jsp">
 		<put-attribute name="titles" value=""></put-attribute>		
 		<put-attribute name="body" value=""></put-attribute>
-		<put-attribute name="footer" value="/WEB-INF/pages/templates/customer/footer.jsp"></put-attribute>
+		<put-attribute name="footer" value=""></put-attribute>
 	</definition>
 	
 	<definition name="show" extends="defaultTemplate">
@@ -34,5 +34,10 @@
 	<definition name="showproduct" extends="loginTemplate">
 		<put-attribute name="titles" value="Login"/>
 		<put-attribute name="body" value="/WEB-INF/pages/showproduct.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="cart" extends="defaultTemplate">
+		<put-attribute name="titles" value="Giỏ hàng"/>		
+		<put-attribute name="body" value="/WEB-INF/pages/cart.jsp"></put-attribute>
 	</definition>
 </tiles-definitions>       
