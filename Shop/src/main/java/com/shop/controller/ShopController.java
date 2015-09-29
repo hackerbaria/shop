@@ -29,7 +29,7 @@ public class ShopController {
 	@Autowired
 	private ProductTypeServices productTypeServices;	
 
-	@RequestMapping(value = "/", method = RequestMethod.GET)
+	@RequestMapping(value = {"/","/login"}, method = RequestMethod.GET)
 	public String showLoginForm(Map<String, Object> model) {
 		User u = new User();
 		model.put("user", u);
@@ -45,11 +45,19 @@ public class ShopController {
 		}
 		
 		if (userServices.checkUser(user)) {
-			// session.setAttribute("user",
-			// customService.findByUsername(c.getUsername()));	
-			User a = userServices.findByUsername(user.getUserName());
 			
-			return "daboard";
+			
+			// customService.findByUsername(c.getUsername()));	
+			User u = userServices.findByUsername(user.getUserName());
+			session.setAttribute("user",user.getUserName());
+			
+			if("Employee".equalsIgnoreCase(u.getRole().getRoleName())) {
+				return "daboard";
+			} else {// back to admin page
+				return "admin";
+			}
+			
+			
 		}
 
 		return "login";

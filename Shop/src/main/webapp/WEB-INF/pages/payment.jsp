@@ -17,25 +17,25 @@
 				<form:form action="order" role="form" commandName="customer" method="GET">
 					<div class="form-group">
 						<label for="name">Họ tên khách hàng: </label>
-						<input type="text" class="form-control" id="name" name="name" placeholder="Nhập họ tên của bạn" value="${user.name}">
+						<input type="text" class="form-control" id="name" name="name" placeholder="Nhập họ tên của bạn">
 					</div>
 					<div class="form-group">
 						<label for="phone">Số điện thoại: </label>
-						<input type="text" class="form-control" id="phone" name="phone" placeholder="Xin nhập số điện thoại chính xác" value="${user.cusPhone}"/>
+						<input type="text" class="form-control" id="phone" name="phone" placeholder="Xin nhập số điện thoại chính xác" />
 					</div>					
 					<div class="form-group">
 						<label for="address" >Địa chỉ cụ thể: </label>
-						<textarea class="form-control" id="address" name="address" rows="5" placeholder="Xin nhập địa chỉ chính xác">${user.cusAddressShip}</textarea>
+						<textarea class="form-control" id="address" name="address" rows="5" placeholder="Xin nhập địa chỉ chính xác"></textarea>
 					</div>
 					
 					<div class="form-group">
 						<label for="recieveMoney">Tiền Nhận Được: </label>
-						<input type="text" class="form-control" id="recieveMoney" name="recieveMoney" placeholder="Số Tiền Nhận Được" value="${user.cusPhone}"/>
+						<input type="text" class="form-control" id="recieveMoney" name="recieveMoney" placeholder="Số Tiền Nhận Được" />
 					</div>
 					
 					<div class="form-group">
 						<label for="backMoney">Tiền thối lại: </label>
-						<input type="text" class="form-control" id="backMoney" name="backMoney" placeholder="Số Tiền Nhận Được" value="${user.cusPhone}"/>
+						<input type="text" class="form-control" id="backMoney" name="backMoney" placeholder="Số Tiền Nhận Được" />
 					</div>
 					
 					<input type="submit" class="btn btn-primary btn-lg" value="Xuất Hóa Đơn"/><br/>

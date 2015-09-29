@@ -37,19 +37,11 @@
             </div>
             <div class="col-md-3" style="margin-top: 20px">
             
-            <c:choose>
-    			<c:when test="${sessionScope.user != null}">    			                                            
-            			Chào, <a href='#'>${sessionScope.user.name}</a> | 
-            			<a href='#'>Đăng xuất</a> |                        		                                               
+           <c:if test="${sessionScope.user != null}">    			                                            
+            			Chào bạn <a href='#'> </a> | 
+            			<a href='login'>Đăng xuất</a> |                        		                                               
             		    <a href="${pageContext.request.contextPath}/cart/show"><span class="glyphicon glyphicon-shopping-cart"></span></a>                       		    			        			
-    			</c:when>
-    			<c:otherwise>
-
-        			<a href="${pageContext.request.contextPath}/login">Đăng nhập</a> | 
-					<a href="">Đăng Ký</a> |
-					<a href="${pageContext.request.contextPath}/cart/show"><span class="glyphicon glyphicon-shopping-cart"></span></a> 
-    			</c:otherwise>
-			</c:choose>
+    		</c:if>
             
             </div>
 		 </div>		
