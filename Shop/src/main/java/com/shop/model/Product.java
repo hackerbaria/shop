@@ -45,7 +45,7 @@ public class Product implements Serializable {
 	private Date date_created;
 	
 	
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "productTypeID", nullable = false)	
 	private ProductType productType;
 	

@@ -10,8 +10,8 @@
 <script src="bootstrap/js/jquery-1.11.2.min.js"></script>
 <style>
 .carousel-inner>.item>img, .carousel-inner>.item>a>img {
-	width: 100%;
 	margin: auto;
+	height: 200px;	
 	
 }
 </style>
@@ -32,7 +32,7 @@
 			<div class="carousel-inner" role="listbox">
 
 				<div class="item active">
-					<img src="resources/img/home/01.jpg" alt="Chania">
+					<img src="resources/photography/001.jpg" alt="Chania">
 					<div class="carousel-caption">
 						<h3>Chania</h3>
 						<p>The atmosphere in Chania has a touch of Florence and
@@ -42,7 +42,7 @@
 
 				<div class="item">
 				<!-- width="460" height="345" -->
-					<img src="resources/img/home/02.jpg" alt="Chania" >
+					<img src="resources/photography/002.jpg" alt="Chania" >
 					<div class="carousel-caption">
 						<h3>Chania</h3>
 						<p>The atmosphere in Chania has a touch of Florence and
@@ -51,7 +51,7 @@
 				</div>
 
 				<div class="item">
-					<img src="resources/img/home/03.jpg" alt="Flower">
+					<img src="resources/photography/003.jpg" alt="Flower">
 					<div class="carousel-caption">
 						<h3>Flowers</h3>
 						<p>Beatiful flowers in Kolymbari, Crete.</p>
@@ -59,7 +59,7 @@
 				</div>
 
 				<div class="item">
-					<img src="resources/img/home/04.jpg" alt="Flower">
+					<img src="resources/photography/004.jpg" alt="Flower">
 					<div class="carousel-caption">
 						<h3>Flowers</h3>
 						<p>Beatiful flowers in Kolymbari, Crete.</p>

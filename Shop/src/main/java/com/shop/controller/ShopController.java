@@ -1,7 +1,9 @@
 package com.shop.controller;
 
 
+import java.util.List;
 import java.util.Map;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +14,8 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.shop.model.Product;
+import com.shop.model.ProductType;
 import com.shop.model.User;
 import com.shop.services.ProductTypeServices;
 import com.shop.services.UserServices;
@@ -45,10 +49,33 @@ public class ShopController {
 			// customService.findByUsername(c.getUsername()));	
 			User a = userServices.findByUsername(user.getUserName());
 			
-			return "redirect:/show";
+			return "daboard";
 		}
 
 		return "login";
+	}	
+		
+
+	@RequestMapping(value = "/addNewProduct", method = RequestMethod.GET)
+	public String addProductForm(Model m) {
+		
+		Product product = new Product();
+		m.addAttribute("product", product);
+		
+		initModelList(m);
+		return "newproduct";
+	}
+	
+	private void initModelList(Model model) {
+		List<ProductType> productsList = this.productTypeServices.getAllProductTypes();		
+		model.addAttribute("products", productsList);
+	}
+	
+	@RequestMapping(value = "/addNewProduct", method = RequestMethod.POST)
+	public String submitProductForm(@Validated Product p, BindingResult result,
+			Model model, HttpSession session) {
+		
+		return "newproduct";
 	}
 	
 	

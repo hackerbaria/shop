@@ -7,8 +7,8 @@
 	<definition name="defaultTemplate" template="/WEB-INF/pages/templates/customer/templates.jsp">
 		<put-attribute name="titles" value=""></put-attribute>
 		<put-attribute name="header" value="/WEB-INF/pages/templates/customer/header.jsp"></put-attribute>
-		<put-attribute name="slider" value=""></put-attribute>
-		<put-attribute name="menu" value="/WEB-INF/pages/templates/customer/menu.jsp"></put-attribute>
+		<!-- <put-attribute name="slider" value="/WEB-INF/pages/templates/customer/slider.jsp"></put-attribute> -->
+		<!-- <put-attribute name="menu" value="/WEB-INF/pages/templates/customer/menu.jsp"></put-attribute> -->
 		<put-attribute name="body" value=""></put-attribute>
 		<put-attribute name="footer" value="/WEB-INF/pages/templates/customer/footer.jsp"></put-attribute>
 	</definition>
@@ -22,7 +22,12 @@
 	<definition name="show" extends="defaultTemplate">
 		<put-attribute name="titles" value="Danh sách sản phẩm"/>		
 		<put-attribute name="body" value="/WEB-INF/pages/show.jsp"></put-attribute>
-	</definition>	
+	</definition>
+	
+	<definition name="daboard" extends="defaultTemplate">
+		<put-attribute name="titles" value="Trang quản lý của nhân viên"/>		
+		<put-attribute name="body" value="/WEB-INF/pages/DaboardEmployee.jsp"></put-attribute>
+	</definition>		
 		
 		
 	<definition name="admin" extends="defaultTemplate">
@@ -35,6 +40,13 @@
 		<put-attribute name="titles" value="Xác nhận đơn hàng"/>
 		<put-attribute name="body" value="/WEB-INF/pages/payment.jsp"/>
 	</definition>
+	
+	<definition name="newproduct" extends="defaultTemplate">
+		<put-attribute name="titles" value="Form thêm sản phẩm mới"/>
+		<put-attribute name="body" value="/WEB-INF/pages/productForm.jsp"/>
+	</definition>
+	
+	
 	
 	<definition name="login" extends="loginTemplate">
 		<put-attribute name="titles" value="Login"/>

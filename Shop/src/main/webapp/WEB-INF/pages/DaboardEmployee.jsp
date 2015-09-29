@@ -22,38 +22,25 @@
 </style>
 </head>
 <body>
-	<c:set var="contextPath" value="${pageContext.request.contextPath}" />
+	<c:set var="contextPath" value="${pageContext.request.contextPath}"/>
 	<div class="container">
 		<form:form method="POST" action="show" commandName="productType">
-			<table>
-				<tr>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>Chọn Linh kiện:</td>
-					<td><form:select path="type">
-							<form:option value="-1" label="...." />
-							<form:options items="${products}" itemValue="type"
-								itemLabel="name" />
-						</form:select></td>
-
-				</tr>
-
-				<tr>
-					<td><p></p></td>
-					<td><p></p></td>
-				</tr>
-
-				<tr>
-					<td></td>
-					<td><input type="submit" name="submit" value="Tìm Kiếm"></td>
-				</tr>
-				<tr>
-			</table>
-		</form:form>
-
-
+		<table>
+			<tr>
+				<td colspan="3"><h1>Trang Quản Lý Của Nhân Viên</h1></td>				
+			</tr>
+			
+			<tr>
+				<td><a href="show" role="button" class="btn btn-success btn-large">Bán Hàng</a></td>
+				<td><a href="addNewProduct" role="button" class="btn btn-success btn-large">Nhập hàng</a></td>
+				<td><a href="#" role="button" class="btn btn-success btn-large">Quản lý SP</a></td>
+			</tr>		
+			
+			
+		</table>
+	</form:form>
+        
+	
 	</div>
 	<!-- End container -->
 </body>
