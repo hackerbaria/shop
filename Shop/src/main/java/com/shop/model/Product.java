@@ -1,5 +1,6 @@
 package com.shop.model;
 
+import java.io.Serializable;
 import java.sql.Date;
 
 import javax.persistence.Column;
@@ -17,9 +18,14 @@ import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 @Table(name = "products", catalog = "shop")
-public class Product {
+public class Product implements Serializable {
 	
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "ID", unique = true, nullable = false)

@@ -7,6 +7,7 @@ import javax.persistence.Query;
 import org.springframework.stereotype.Repository;
 
 import com.shop.dao.UserDao;
+import com.shop.model.Customer;
 import com.shop.model.User;
 
 
@@ -25,6 +26,14 @@ public class UserDaoImpl extends GenericDaoImpl<User> implements UserDao {
 		} else {
 			return false;
 		}
+	}
+	
+	public User findByUsername(String username) {
+		String hql = "FROM User C WHERE C.userName = :user";
+		Query query = entityManager.createQuery(hql);
+		query.setParameter("user", username);
+		List<User> results = (List<User>)query.getResultList();
+		return results.isEmpty()?null:results.get(0);
 	}
 
 }

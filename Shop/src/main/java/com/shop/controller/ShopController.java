@@ -42,7 +42,8 @@ public class ShopController {
 		
 		if (userServices.checkUser(user)) {
 			// session.setAttribute("user",
-			// customService.findByUsername(c.getUsername()));		
+			// customService.findByUsername(c.getUsername()));	
+			User a = userServices.findByUsername(user.getUserName());
 			
 			return "redirect:/show";
 		}

@@ -24,6 +24,17 @@
 		<put-attribute name="body" value="/WEB-INF/pages/show.jsp"></put-attribute>
 	</definition>	
 		
+		
+	<definition name="admin" extends="defaultTemplate">
+		<put-attribute name="titles" value="Trang của Chủ Cửa Hàng"/>		
+		<put-attribute name="body" value="/WEB-INF/pages/AdminPage.jsp"></put-attribute>
+	</definition>	
+	
+	
+	<definition name="payment" extends="defaultTemplate">
+		<put-attribute name="titles" value="Xác nhận đơn hàng"/>
+		<put-attribute name="body" value="/WEB-INF/pages/payment.jsp"/>
+	</definition>
 	
 	<definition name="login" extends="loginTemplate">
 		<put-attribute name="titles" value="Login"/>

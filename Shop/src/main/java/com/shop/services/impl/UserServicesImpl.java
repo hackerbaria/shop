@@ -16,5 +16,9 @@ public class UserServicesImpl implements UserServices {
 	public boolean checkUser(User user) {		
 		return userDao.checkUser(user);
 	}
+	public User findByUsername(String user) {
+		return userDao.findByUsername(user);
+	}
+	
 
 }

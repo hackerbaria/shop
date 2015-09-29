@@ -4,5 +4,7 @@ import com.shop.model.User;
 
 public interface UserServices {
 	boolean checkUser(User user);
+	
+	User findByUsername(String user);
 
 }

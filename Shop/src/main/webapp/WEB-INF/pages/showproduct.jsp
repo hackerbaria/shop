@@ -35,16 +35,14 @@
 		<div class="row text-center">
 			<!-- list of the best feature products. -->
 			<c:if test="${not empty listProduct}">				
-					<c:forEach var="p" items="${listProduct}">
-					
+					<c:forEach var="p" items="${listProduct}">					
 						<div class="col-md-3 col-sm-6 hero-feature">
 								<div class="thumbnail">
-									<a href="product/detail/${p.id}"><img
+									<a href="cart/add/${p.id}?quantity=1"><img
 										src="resources/img/${p.image}" alt=""></a>
 									<div class="caption">
 										<h3>${p.productName}</h3>																		
-										<div class="promoteprice"><p>Giá: ${p.salePrice} VND</p></div>
-										<div class="promoteprice"><p>Số Lượng: <input type="text" name="numberInput"/></p></div>
+										<div class="promoteprice"><p>Giá: ${p.salePrice} VND</p></div>										
 										<p style="visibility: collapse;">hidden</p>																									
 										<p>
 											<a href="cart/add/${p.id}?quantity=1" class="btn btn-primary">Mua ngay</a> <a href="product/detail/${p.id}"

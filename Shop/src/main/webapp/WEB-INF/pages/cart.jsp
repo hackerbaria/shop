@@ -37,11 +37,11 @@
 								<td>${pStatus.index+1}</td>
 								<td><h4>${p.key.productName}</h4>
 									
-									<c:if test="${p.key.salePrice!=0}">
-										<s>${p.key.salePrice} VND</s>
+									<c:if test="${p.key.salePrice!=0}">										
+										<h4>${p.key.salePrice}</h4>
 									</c:if>
 									<img class="img-responsive" alt="" src="<c:url value="/resources/img/${p.key.image}"/>" width="75px" height="100px"/></td>
-								<td><input type="text" value="${p.value}" class='form-control' style='width:20%' id='${p.key.id}' name='${p.key.id}' maxlength="2"/></td>
+								<td><input type="text" value="${p.value}" class='form-control' style='width:20%' id='${p.key.id}' name='${p.key.id}' maxlength="3"/></td>
 								<td>${p.key.salePrice*p.value} VND</td>
 							</tr>
 						 </c:forEach> 
@@ -58,7 +58,7 @@
 			<div class="col-md-12 text-right"><a href="${pageContext.request.contextPath}" class="button">Tiếp tục mua sắm</a></div>
 		</div>
 		<div class="row">
-			<div class="col-md-12 text-right"><a href="movetopayment" class="button">Đăt hàng</a></div>
+			<div class="col-md-12 text-right"><a href="movetopayment" class="button">Mua hàng</a></div>
 		</div>
 	</div>
 	<script type="text/javascript">
